@@ -1,33 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
+import { NavBar } from './components/NavBar.jsx';
+//  Si utilizo export called (o nombrado), debo utilizar en el import las {} y dentro debo poner estrictamente el mismo nombre con el cual exporté del otro lado (del lado del archivo)
+import { Footer } from './components/Footer.jsx'
+import Container from './components/Container.jsx'
 
 function App() {
-  const [count, setCount] = useState(0)
+    return (    
+        <>
+            {/* <NavBar> */}
+                {/* Acá podría poner contenido (Parece)    */}
+            {/* </NavBar>  */}
+            {/* Utilizo una etiqueta de NavBar para poder utilizar el componente NavBar, con una de apertura y con una de cierre */}
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR - Hot Module Replacement Active!
-        </p>
-      </div>
-      <h1>Aguante la comisión 38i</h1>
-    </>
-  )
+            <NavBar />
+            {/* Si no vamos a colocar contenido entre la etiqueta de apertura y de cierre, podemos utilizar una etiqueta de autocierre, es de <NombreDeComponente />
+             */}
+            <Container />
+            <Footer />
+        </>
+    )
 }
 
 export default App
