@@ -21,7 +21,7 @@ export const NavBar = (props) => {
     console.log("Muestro el mensaje", props.messageNavbar)
 
     return (
-        <div>
+        <div className="d-flex justify-content-between">
             <nav>
                 <ul>
                     <li>Home</li>
@@ -29,7 +29,6 @@ export const NavBar = (props) => {
                     <li>Contacto</li>
                 </ul>
             </nav>
-            <h1>{props.messageNavbar}</h1>
             <IconCart />
         </div>
     );

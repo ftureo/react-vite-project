@@ -1,15 +1,9 @@
-import { IconCart } from "./IconCart.jsx"
-
-export const Footer = (props) => {
-
-    console.log("props en Footer", props)
-
+export const Footer = () => {
     return(
-        <footer>
+        <footer className="d-flex justify-content-evenly">
             <p>Este es el footer</p>
             <p>Link de Github</p>
             <p>Link de Linkedin</p>
-            <IconCart />
         </footer>
     )
 }
