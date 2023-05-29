@@ -12,16 +12,27 @@
 // }
 // export default NavBar;
 
-export const NavBar = () => {
-    return(
-        <nav>
-            <ul>
-                <li>Home</li>
-                <li>Productos</li>
-                <li>Contacto</li>
-            </ul>
-        </nav>
-    )
+
+import { IconCart } from "./IconCart.jsx";
+
+export const NavBar = (props) => {
+    
+    console.log("props en NavBar", props)
+    console.log("Muestro el mensaje", props.messageNavbar)
+
+    return (
+        <div>
+            <nav>
+                <ul>
+                    <li>Home</li>
+                    <li>Productos</li>
+                    <li>Contacto</li>
+                </ul>
+            </nav>
+            <h1>{props.messageNavbar}</h1>
+            <IconCart />
+        </div>
+    );
 }
 
 // Existen dos formas de exportar un componente:
