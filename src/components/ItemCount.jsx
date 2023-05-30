@@ -2,7 +2,6 @@ import { useState } from "react";
 import Button from "react-bootstrap/Button";
 
 export const ItemCount = (props) => {
-    console.log("props en ItemCount", props)
     const [count, setCount] = useState(0); // HOOKS
     // El useState es un hook que me permite guardar un estado en un componente funcional
     // El useState me devuelve un array con dos posiciones, la primera posición es el valor que quiero guardar, la segunda posición es la función que me permite modificar ese valor

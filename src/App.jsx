@@ -2,7 +2,7 @@ import "./App.css";
 import { NavBar } from "./components/NavBar.jsx";
 //  Si utilizo export called (o nombrado), debo utilizar en el import las {} y dentro debo poner estrictamente el mismo nombre con el cual exporté del otro lado (del lado del archivo)
 import { Footer } from "./components/Footer.jsx";
-import Container from "./components/Container.jsx";
+import ProductListContainer from "./components/ProductListContainer.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
@@ -15,28 +15,9 @@ function App() {
 
             {/* Si no vamos a colocar contenido entre la etiqueta de apertura y de cierre, podemos utilizar una etiqueta de autocierre, es de <NombreDeComponente />
              */}
-            <NavBar messageNavbar="Soy la Navbar mostrada desde una prop" numberNavbar={8} />
-            <Container
-                messageContainer="Soy el container"
-                product={
-                    { 
-                        id: 1, 
-                        name: "Product 1",
-                        description: "Description 1",
-                        stock: 15
-                    }
-                }
-                encendido={true}
-            />
-            <Footer 
-                messageFooter="Soy el footer" 
-                arrayFooter={
-                    [
-                        1,
-                        2,
-                        3
-                    ]
-            }/>
+            <NavBar />
+            <ProductListContainer />
+            <Footer />
         </>
     );
 }
