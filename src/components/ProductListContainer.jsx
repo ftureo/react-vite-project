@@ -25,21 +25,18 @@ const ProductListContainer = () => {
     const fetchData = async () => {
         try {
             const data = await getData(URL_FAKESTOREAPI_PRODUCTS);
-            console.log({ data });
             setProducts(data);
         } catch (error) {
             throw new Error(error);
         }
     };
 
-    console.log({ products });
-
     //  Cuando el componente se monta
     //  Cuando se actualiza
     // useEffect(setup, dependencies?)
 
     useEffect(() => {
-        fetchData()
+        fetchData();
     }, []);
 
     return (
@@ -49,7 +46,11 @@ const ProductListContainer = () => {
                 componentes
             </h1>
             <ItemCount stock={10} />
-            <ProductList products={products}/>
+            {products.length === 0 ? (
+                <h1>Loading ...</h1>
+            ) : (
+                <ProductList products={products} />
+            )}
         </main>
     );
 };
