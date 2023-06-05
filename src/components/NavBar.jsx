@@ -15,11 +15,7 @@
 
 import { IconCart } from "./IconCart.jsx";
 
-export const NavBar = (props) => {
-    
-    console.log("props en NavBar", props)
-    console.log("Muestro el mensaje", props.messageNavbar)
-
+export const NavBar = () => {
     return (
         <div className="d-flex justify-content-between">
             <nav>
