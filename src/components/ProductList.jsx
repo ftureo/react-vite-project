@@ -7,14 +7,6 @@ import { ItemProduct } from "./ItemProduct.jsx"
 
 export const ProductList = (props) => {
     const { products } = props
-
-    const condition = {
-        enable: true, 
-        isAvailable: false,
-        theme: "dark",
-        title: "Perrito"
-    }
-
 // export const ProductList = ( { products } ) => {
 //     console.log("las props en productList", products);
     return (
@@ -24,7 +16,7 @@ export const ProductList = (props) => {
                 // const { id, category, description, image, price, title } = product
                 return(
                     // <ItemProduct key={index} id={id} category={category} description={description} image={image} price={price} title={title}/>
-                        <ItemProduct key={index} product={product} condition={condition} />
+                        <ItemProduct key={index} product={product}/>
                     )
             }) }
         </>
