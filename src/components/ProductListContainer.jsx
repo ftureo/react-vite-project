@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { ItemCount } from "./ItemCount.jsx";
 import { getData } from "../utils/functions.js";
 import { ProductList } from "./ProductList.jsx";
+import Spinner from "react-bootstrap/Spinner";
 
 // Esto me trae solo lo que necesito de la librería
 // import Button from "react-bootstrap/Button";
@@ -45,9 +45,10 @@ const ProductListContainer = () => {
                 Aguante la comisión 38i que está aprendiendo React con
                 componentes
             </h1>
-            <ItemCount stock={10} />
             {products.length === 0 ? (
-                <h1>Loading ...</h1>
+                <Spinner animation="border" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                </Spinner>
             ) : (
                 <ProductList products={products} />
             )}

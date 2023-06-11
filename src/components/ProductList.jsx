@@ -1,6 +1,7 @@
 // Lista que muestra todos los ItemProduct que existen 
 
 import { ItemProduct } from "./ItemProduct.jsx"
+import { Container } from "react-bootstrap";
 
 // export const ProductList = (props) => {
 //     console.log("las props en productList", props.products)
@@ -10,16 +11,16 @@ export const ProductList = (props) => {
 // export const ProductList = ( { products } ) => {
 //     console.log("las props en productList", products);
     return (
-        <>
+        <Container className="d-flex col-12 flex-wrap">
             {/* <ItemProduct /> */}
-            { products.map((product, index) => {
+            {products.map((product, index) => {
                 // const { id, category, description, image, price, title } = product
-                return(
+                return (
                     // <ItemProduct key={index} id={id} category={category} description={description} image={image} price={price} title={title}/>
-                        <ItemProduct key={index} product={product}/>
-                    )
-            }) }
-        </>
+                    <ItemProduct key={index} product={product} />
+                );
+            })}
+        </Container>
     );
 };
 
