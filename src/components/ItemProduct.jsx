@@ -40,7 +40,7 @@ export const ItemProduct = ({ product: { id, title, description, image, rating }
                 <Card.Text>
                     {description}
                 </Card.Text>
-                <ItemCount stock={rating.count}/>
+                {/* <ItemCount stock={rating.count}/> */}
                 <Button variant="primary">Agregar a mi carrito</Button>
             </Card.Body>
         </Card>

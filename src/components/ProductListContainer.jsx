@@ -19,7 +19,7 @@ import { API_PRACTICE } from "../utils/constants.js";
 
 const ProductListContainer = () => {
     const [products, setProducts] = useState([]);
-    const URL = API_PRACTICE.FAKESTOREAPI_PRODUCTS;
+    const URL = API_PRACTICE.PLATZI_PRODUCTS;
 
     // Acá también podríamos escribir la lógica de getData
 
