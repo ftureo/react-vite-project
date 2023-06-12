@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getData } from "../utils/functions.js";
 import { ProductList } from "./ProductList.jsx";
 import Spinner from "react-bootstrap/Spinner";
+import { API_PRACTICE } from "../utils/constants.js";
 
 // Esto me trae solo lo que necesito de la librería
 // import Button from "react-bootstrap/Button";
@@ -18,13 +19,13 @@ import Spinner from "react-bootstrap/Spinner";
 
 const ProductListContainer = () => {
     const [products, setProducts] = useState([]);
-    const URL_FAKESTOREAPI_PRODUCTS = "https://fakestoreapi.com/products";
+    const URL = API_PRACTICE.FAKESTOREAPI_PRODUCTS;
 
     // Acá también podríamos escribir la lógica de getData
 
     const fetchData = async () => {
         try {
-            const data = await getData(URL_FAKESTOREAPI_PRODUCTS);
+            const data = await getData(URL);
             setProducts(data);
         } catch (error) {
             throw new Error(error);
