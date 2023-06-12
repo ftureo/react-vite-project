@@ -6,27 +6,44 @@ export const NavBar = () => {
     return (
         <Navbar bg="light" expand="lg">
             <Container>
-                <Navbar.Brand href="#home">React E-Commerce</Navbar.Brand>
+                <Link to="/">
+                    <Navbar.Brand>React E-Commerce</Navbar.Brand>
+                </Link>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav href="#home">Home</Nav>
+                        <Link to="/">
+                            <Nav>Home</Nav>
+                        </Link>
                         <Link to="/about-us">
                             <Nav>About us</Nav>
                         </Link>
                         <NavDropdown title="Categories" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">
-                                Women&apos;s Clothing
-                            </NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">
-                                Men&apos;s Clothing
-                            </NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">
-                                Jewelery
-                            </NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.4">
-                                Electronics
-                            </NavDropdown.Item>
+                            <Link to="/category/furniture">
+                                <Nav>
+                                    Furniture
+                                </Nav>
+                            </Link>
+                            <Link to="/category/shoes">
+                                <Nav>
+                                    Shoes
+                                </Nav>
+                            </Link>
+                            <Link to="/category/others">
+                                <Nav>
+                                    Others
+                                </Nav>
+                            </Link>
+                            <Link to="/category/nuevo">
+                                <Nav>
+                                    Nuevo
+                                </Nav>
+                            </Link>
+                            <Link to="/category/electronics">
+                                <Nav>
+                                    Electronics
+                                </Nav>
+                            </Link>
                         </NavDropdown>
                     </Nav>
                 </Navbar.Collapse>
