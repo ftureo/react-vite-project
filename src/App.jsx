@@ -15,9 +15,10 @@ function App() {
                 <Route path="/" element={<ProductListContainer />} />
                 <Route path="/perrito" element={<h2>Ruta de Perrito</h2>} />
                 <Route path="/about-us" element={<AboutUs />} />
-                <Route path="/category/furniture" element={<h1>FURNITURE</h1>}></Route>
-                <Route path="/category/shoes" element={<h1>SHOES</h1>}></Route>
-                <Route path="/category/electronics" element={<h1>ELECTRONICS</h1>}></Route>
+                <Route
+                    path="/category/:category"
+                    element={<ProductListContainer />}
+                ></Route>
             </Routes>
             <Footer />
         </>
