@@ -3,42 +3,31 @@ import { getData } from "../utils/functions.js";
 import { ProductList } from "./ProductList.jsx";
 import Spinner from "react-bootstrap/Spinner";
 import { API_PRACTICE } from "../utils/constants.js";
-
-// Esto me trae solo lo que necesito de la librería
-// import Button from "react-bootstrap/Button";
-// import Card from "react-bootstrap/Card";
-
-// Esto me trae la librería completa
-// import { Button, Card, Layout, Link, Nav } from "react-bootstrap";
-
-// Estructura de un state en React es
-// const [value, setterFunction] = useState(initialValue)
-// initialValue es el valor inicial que va a tener el state y puede ser de tipo: string, number, boolean, array, object, etc.
-
-// Acá vamos a hacer un pedido asincrónico, lo vamos a guardar en un estado y vamos a pasarle ese estado por props a la lista de productos
+import { useParams } from "react-router-dom";
 
 const ProductListContainer = () => {
     const [products, setProducts] = useState([]);
     const URL = API_PRACTICE.FAKESTOREAPI_PRODUCTS;
 
-    // Acá también podríamos escribir la lógica de getData
+    const { category } = useParams();
 
     const fetchData = async () => {
         try {
             const data = await getData(URL);
-            setProducts(data);
+            if(category) {
+                const filteredProducts = data.filter((product) => (product.category) === category.toLowerCase());
+                setProducts(filteredProducts);
+            } else {
+                setProducts(data);
+            }
         } catch (error) {
             throw new Error(error);
         }
     };
 
-    //  Cuando el componente se monta
-    //  Cuando se actualiza
-    // useEffect(setup, dependencies?)
-
     useEffect(() => {
         fetchData();
-    }, []);
+    }, [category]);
 
     return (
         <main>
